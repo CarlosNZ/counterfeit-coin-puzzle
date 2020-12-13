@@ -128,27 +128,29 @@ print("2 - Run a single simulation where you specify the fake coin")
 print("3 - Run through all possible outcomes")
 print("4 - Run several random trials")
 
-selection = input("Enter number: ")
-
-try:
-    if selection == "" or int(selection) == 1:
-        fake_num = random.randint(0, 11)
-        trials = 1
-    elif int(selection) == 2:
-        fake_num = int(input("Which coin should be the fake? (1-12)"))-1
-        trials = 1
-    elif int(selection) == 3:
-        fake_num = -1
-        trials = 12
-    elif int(selection) == 4:
-        fake_num = -2
-        trials = int(input("How many random trials? "))
-    else:
-        print("Invalid input")
-        exit()
-except:
-    print("Invalid input")
-    exit()
+while True:
+    selection = input("\nEnter number: ")
+    try:
+        if selection == "" or int(selection) == 1:
+            fake_num = random.randint(0, 11)
+            trials = 1
+            break
+        elif int(selection) == 2:
+            fake_num = int(input("Which coin should be the fake? (1-12)"))-1
+            trials = 1
+            break
+        elif int(selection) == 3:
+            fake_num = -1
+            trials = 12
+            break
+        elif int(selection) == 4:
+            fake_num = -2
+            trials = int(input("How many random trials? "))
+            break
+        else:
+            print("\n>> Invalid input")
+    except:
+        print("\n>> Invalid input")
 
 print("")
 for i in range(trials):
