@@ -55,8 +55,7 @@ def solve_all_coins(coins):
         print("so we know fake is amongst coins 9–12.")
         return solve_four_coins(coins[8:12], scale)
     else:
-        print("so now we'll keep coins 7 & 8 aside and")
-        print("swap coins 3, 4 & 6 to their opposide sides.")
+        print("so we can ignore coins 9–12 now.\nLet's keep coins 7 & 8 aside and swap coins 3, 4 & 6 to their opposide sides.")
         return solve_eight_coins(coins[0:8], result1, scale)
 
 
