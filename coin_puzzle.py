@@ -33,15 +33,15 @@ class Balance_Scale():
         left_weight = sum([coin.weight for coin in left])
         right_weight = sum([coin.weight for coin in right])
         self.usage += 1
-        print("\nWeighing #{}".format(self.usage))
+        print("\n> Weighing #{}".format(self.usage))
         print("Checking coins {} (Left) against coins {} (Right)...".format(
             [coin.number for coin in left], [coin.number for coin in right]))
         if left_weight == right_weight:
-            print("Both sides are balanced")
+            print("Both sides are balanced", end=" ")
             return "BALANCED"
         else:
             print("{} side is heavier".format(
-                "Left" if left_weight - right_weight > 0 else "Right"))
+                "Left" if left_weight - right_weight > 0 else "Right"), end=" ")
             return "LEFT" if left_weight - right_weight > 0 else "RIGHT"
 
 
@@ -112,20 +112,59 @@ def solve_final_three_coins(coins, result2, scale):
     if result3 == "BALANCED":
         return coins[2]
     elif result3 == result2:
-        print("The fake coin will be the one that caused the scale to tip\nin the direction consistent with the second weighing.")
+        print("\nThe fake coin will be the one that caused the scale to tip in the direction consistent with the second weighing.")
         return coins[0]
     else:
-        print("The fake coin will be the one that caused the scale to tip\nin the direction consistent with the second weighing.")
+        print("\nThe fake coin will be the one that caused the scale to tip in the direction consistent with the second weighing.")
         return coins[1]
 
 
-for i in range(12):
+print("======================================")
+print("Welcome to the Counterfeit Coin Puzzle")
+print("======================================")
+print("\nPlease select an option:")
+print("1 - Run a single random simulation")
+print("2 - Run a single simulation where you specify the fake coin")
+print("3 - Run through all possible outcomes")
+print("4 - Run several random trials")
+
+selection = input("Enter number: ")
+
+try:
+    if selection == "" or int(selection) == 1:
+        fake_num = random.randint(0, 11)
+        trials = 1
+    elif int(selection) == 2:
+        fake_num = int(input("Which coin should be the fake? (1-12)"))-1
+        trials = 1
+    elif int(selection) == 3:
+        fake_num = -1
+        trials = 12
+    elif int(selection) == 4:
+        fake_num = -2
+        trials = int(input("How many random trials? "))
+    else:
+        print("Invalid input")
+        exit()
+except:
+    print("Invalid input")
+    exit()
+
+print("")
+for i in range(trials):
+    print("--------")
+    print("TRIAL {}".format(i+1))
+    print("--------")
     coins = [Coin(i+1) for i in range(12)]
-    # coins[random.randint(0, 11)].set_fake()
-    coins[i].set_fake()
+    if fake_num == -1:  # Sequential
+        coins[i].set_fake()
+    elif fake_num == -2:  # Random
+        coins[random.randint(0, 11)].set_fake()
+    else:
+        coins[fake_num].set_fake()
 
     deduced_fake = solve_all_coins(coins)
-    print("The fake coin must be Coin {}".format(deduced_fake.number))
+    print("\nThe fake coin must be Coin {}".format(deduced_fake.number))
     if deduced_fake.is_fake:
         print("Correct!\n")
     else:
