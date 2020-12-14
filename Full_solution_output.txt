@@ -1,0 +1,235 @@
+--------
+TRIAL 1
+--------
+
+> Weighing #1
+Checking coins [1, 2, 3, 4] (Left) against coins [5, 6, 7, 8] (Right)...
+Right side is heavier so we can ignore coins 9–12 now.
+Let's keep coins 7 & 8 aside and swap coins 3, 4 & 6 to their opposide sides.
+
+> Weighing #2
+Checking coins [1, 2, 6] (Left) against coins [3, 4, 5] (Right)...
+Right side is heavier so the fake must be one of the non-swapped coins (1, 2 or 5),
+since the scale tipped the same way.
+
+> Weighing #3
+Checking coins [1] (Left) against coins [2] (Right)...
+Right side is heavier 
+The fake coin will be the one that caused the scale to tip in the direction consistent with the second weighing.
+
+The fake coin must be Coin 1
+Correct!
+
+--------
+TRIAL 2
+--------
+
+> Weighing #1
+Checking coins [1, 2, 3, 4] (Left) against coins [5, 6, 7, 8] (Right)...
+Left side is heavier so we can ignore coins 9–12 now.
+Let's keep coins 7 & 8 aside and swap coins 3, 4 & 6 to their opposide sides.
+
+> Weighing #2
+Checking coins [1, 2, 6] (Left) against coins [3, 4, 5] (Right)...
+Left side is heavier so the fake must be one of the non-swapped coins (1, 2 or 5),
+since the scale tipped the same way.
+
+> Weighing #3
+Checking coins [1] (Left) against coins [2] (Right)...
+Right side is heavier 
+The fake coin will be the one that caused the scale to tip in the direction consistent with the second weighing.
+
+The fake coin must be Coin 2
+Correct!
+
+--------
+TRIAL 3
+--------
+
+> Weighing #1
+Checking coins [1, 2, 3, 4] (Left) against coins [5, 6, 7, 8] (Right)...
+Right side is heavier so we can ignore coins 9–12 now.
+Let's keep coins 7 & 8 aside and swap coins 3, 4 & 6 to their opposide sides.
+
+> Weighing #2
+Checking coins [1, 2, 6] (Left) against coins [3, 4, 5] (Right)...
+Left side is heavier so the fake must be one of the swapped coins (3, 4 or 6),
+since the scale tipped the other way this time.
+
+> Weighing #3
+Checking coins [3] (Left) against coins [4] (Right)...
+Right side is heavier 
+The fake coin will be the one that caused the scale to tip in the direction consistent with the second weighing.
+
+The fake coin must be Coin 3
+Correct!
+
+--------
+TRIAL 4
+--------
+
+> Weighing #1
+Checking coins [1, 2, 3, 4] (Left) against coins [5, 6, 7, 8] (Right)...
+Left side is heavier so we can ignore coins 9–12 now.
+Let's keep coins 7 & 8 aside and swap coins 3, 4 & 6 to their opposide sides.
+
+> Weighing #2
+Checking coins [1, 2, 6] (Left) against coins [3, 4, 5] (Right)...
+Right side is heavier so the fake must be one of the swapped coins (3, 4 or 6),
+since the scale tipped the other way this time.
+
+> Weighing #3
+Checking coins [3] (Left) against coins [4] (Right)...
+Right side is heavier 
+The fake coin will be the one that caused the scale to tip in the direction consistent with the second weighing.
+
+The fake coin must be Coin 4
+Correct!
+
+--------
+TRIAL 5
+--------
+
+> Weighing #1
+Checking coins [1, 2, 3, 4] (Left) against coins [5, 6, 7, 8] (Right)...
+Right side is heavier so we can ignore coins 9–12 now.
+Let's keep coins 7 & 8 aside and swap coins 3, 4 & 6 to their opposide sides.
+
+> Weighing #2
+Checking coins [1, 2, 6] (Left) against coins [3, 4, 5] (Right)...
+Right side is heavier so the fake must be one of the non-swapped coins (1, 2 or 5),
+since the scale tipped the same way.
+
+> Weighing #3
+Checking coins [1] (Left) against coins [2] (Right)...
+Both sides are balanced 
+The fake coin must be Coin 5
+Correct!
+
+--------
+TRIAL 6
+--------
+
+> Weighing #1
+Checking coins [1, 2, 3, 4] (Left) against coins [5, 6, 7, 8] (Right)...
+Left side is heavier so we can ignore coins 9–12 now.
+Let's keep coins 7 & 8 aside and swap coins 3, 4 & 6 to their opposide sides.
+
+> Weighing #2
+Checking coins [1, 2, 6] (Left) against coins [3, 4, 5] (Right)...
+Right side is heavier so the fake must be one of the swapped coins (3, 4 or 6),
+since the scale tipped the other way this time.
+
+> Weighing #3
+Checking coins [3] (Left) against coins [4] (Right)...
+Both sides are balanced 
+The fake coin must be Coin 6
+Correct!
+
+--------
+TRIAL 7
+--------
+
+> Weighing #1
+Checking coins [1, 2, 3, 4] (Left) against coins [5, 6, 7, 8] (Right)...
+Right side is heavier so we can ignore coins 9–12 now.
+Let's keep coins 7 & 8 aside and swap coins 3, 4 & 6 to their opposide sides.
+
+> Weighing #2
+Checking coins [1, 2, 6] (Left) against coins [3, 4, 5] (Right)...
+Both sides are balanced so the fake must be either 7 or 8.
+
+> Weighing #3
+Checking coins [7] (Left) against coins [1] (Right)...
+Left side is heavier 
+The fake coin must be Coin 7
+Correct!
+
+--------
+TRIAL 8
+--------
+
+> Weighing #1
+Checking coins [1, 2, 3, 4] (Left) against coins [5, 6, 7, 8] (Right)...
+Left side is heavier so we can ignore coins 9–12 now.
+Let's keep coins 7 & 8 aside and swap coins 3, 4 & 6 to their opposide sides.
+
+> Weighing #2
+Checking coins [1, 2, 6] (Left) against coins [3, 4, 5] (Right)...
+Both sides are balanced so the fake must be either 7 or 8.
+
+> Weighing #3
+Checking coins [7] (Left) against coins [1] (Right)...
+Both sides are balanced 
+The fake coin must be Coin 8
+Correct!
+
+--------
+TRIAL 9
+--------
+
+> Weighing #1
+Checking coins [1, 2, 3, 4] (Left) against coins [5, 6, 7, 8] (Right)...
+Both sides are balanced so we know fake is amongst coins 9–12.
+
+> Weighing #2
+Checking coins [9] (Left) against coins [10] (Right)...
+Left side is heavier 
+> Weighing #3
+Checking coins [9] (Left) against coins [11] (Right)...
+Left side is heavier 
+The fake coin must be Coin 9
+Correct!
+
+--------
+TRIAL 10
+--------
+
+> Weighing #1
+Checking coins [1, 2, 3, 4] (Left) against coins [5, 6, 7, 8] (Right)...
+Both sides are balanced so we know fake is amongst coins 9–12.
+
+> Weighing #2
+Checking coins [9] (Left) against coins [10] (Right)...
+Right side is heavier 
+> Weighing #3
+Checking coins [9] (Left) against coins [11] (Right)...
+Both sides are balanced 
+The fake coin must be Coin 10
+Correct!
+
+--------
+TRIAL 11
+--------
+
+> Weighing #1
+Checking coins [1, 2, 3, 4] (Left) against coins [5, 6, 7, 8] (Right)...
+Both sides are balanced so we know fake is amongst coins 9–12.
+
+> Weighing #2
+Checking coins [9] (Left) against coins [10] (Right)...
+Both sides are balanced Therefore fake is either 11 or 12.
+
+> Weighing #3
+Checking coins [11] (Left) against coins [9] (Right)...
+Left side is heavier 
+The fake coin must be Coin 11
+Correct!
+
+--------
+TRIAL 12
+--------
+
+> Weighing #1
+Checking coins [1, 2, 3, 4] (Left) against coins [5, 6, 7, 8] (Right)...
+Both sides are balanced so we know fake is amongst coins 9–12.
+
+> Weighing #2
+Checking coins [9] (Left) against coins [10] (Right)...
+Both sides are balanced Therefore fake is either 11 or 12.
+
+> Weighing #3
+Checking coins [11] (Left) against coins [9] (Right)...
+Both sides are balanced 
+The fake coin must be Coin 12
+Correct!
