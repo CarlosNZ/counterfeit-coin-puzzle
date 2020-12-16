@@ -73,6 +73,7 @@ def solve_four_coins(coins, scale):
         else:
             return coins[2]
     else:
+        print("")
         # 3rd weighing
         result3 = scale.weigh_coins([coins[0]], [coins[2]])
         if result3 == "BALANCED":
