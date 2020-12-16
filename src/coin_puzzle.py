@@ -2,14 +2,14 @@ import random
 
 
 class Coin():
-    def __init__(self, number, fake=False, fake_weight="random"):
+    def __init__(self, number, fake=False, fake_offset="random"):
         self.number = number
         self.is_fake = fake
-        self.weight = 1 + self.get_multiplier(fake_weight) * fake
+        self.weight = 1 + self.get_weight_offset(fake_offset) * fake
 
     def set_fake(self, fake_weight="random"):
         self.is_fake = True
-        self.weight = 1 + self.get_multiplier(fake_weight)
+        self.weight = 1 + self.get_weight_offset(fake_weight)
 
     def __str__(self):
         return "Coin #{} {}".format(
@@ -19,14 +19,14 @@ class Coin():
         return "Coin #{} {}".format(
             self.number, "[FAKE] (Weight {})".format(self.weight) if self.is_fake else "")
 
-    def get_multiplier(self, fake_weight):
-        if fake_weight == "random":
-            multiplier = random.choice([-0.1, 0.1])
-        elif fake_weight == "heavier":
-            multiplier = 0.1
+    def get_weight_offset(self, fake_offset):
+        if fake_offset == "random":
+            weight_offset = random.choice([-0.1, 0.1])
+        elif fake_offset == "heavier":
+            weight_offset = 0.1
         else:
-            multiplier = -0.1
-        return multiplier
+            weight_offset = -0.1
+        return weight_offset
 
 
 class Balance_Scale():
