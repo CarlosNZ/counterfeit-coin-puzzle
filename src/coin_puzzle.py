@@ -2,14 +2,14 @@ import random
 
 
 class Coin():
-    def __init__(self, number, fake=False):
+    def __init__(self, number, fake=False, fake_weight="random"):
         self.number = number
         self.is_fake = fake
-        self.weight = 1 + random.choice([-0.1, 0.1]) * fake
+        self.weight = 1 + self.get_multiplier(fake_weight) * fake
 
-    def set_fake(self):
+    def set_fake(self, fake_weight="random"):
         self.is_fake = True
-        self.weight = 1 + random.choice([-0.1, 0.1])
+        self.weight = 1 + self.get_multiplier(fake_weight)
 
     def __str__(self):
         return "Coin #{} {}".format(
@@ -18,6 +18,15 @@ class Coin():
     def __repr__(self):
         return "Coin #{} {}".format(
             self.number, "[FAKE] (Weight {})".format(self.weight) if self.is_fake else "")
+
+    def get_multiplier(self, fake_weight):
+        if fake_weight == "random":
+            multiplier = random.choice([-0.1, 0.1])
+        elif fake_weight == "heavier":
+            multiplier = 0.1
+        else:
+            multiplier = -0.1
+        return multiplier
 
 
 class Balance_Scale():
@@ -133,18 +142,24 @@ while True:
     try:
         if selection == "" or int(selection) == 1:
             fake_num = random.randint(0, 11)
+            fake_weight = "random"
             trials = 1
             break
         elif int(selection) == 2:
-            fake_num = int(input("Which coin should be the fake? (1-12)"))-1
+            fake_num = int(input("Which coin should be the fake? (1-12) "))-1
+            fake_weight_input = input(
+                "Should the fake coin be heavier (1), lighter (2), or random (3 or <Enter>?)")
+            fake_weight = "heavier" if fake_weight_input == "1" else "lighter" if fake_weight_input == "2" else "random"
             trials = 1
             break
         elif int(selection) == 3:
             fake_num = -1
-            trials = 12
+            fake_weight = "random"
+            trials = 24
             break
         elif int(selection) == 4:
             fake_num = -2
+            fake_weight = "random"
             trials = int(input("How many random trials? "))
             break
         else:
@@ -159,11 +174,12 @@ for i in range(trials):
     print("--------")
     coins = [Coin(i+1) for i in range(12)]
     if fake_num == -1:  # Sequential
-        coins[i].set_fake()
+        fake_weight = "lighter" if i % 2 == 0 else "heavier"
+        coins[i//2].set_fake(fake_weight)
     elif fake_num == -2:  # Random
         coins[random.randint(0, 11)].set_fake()
     else:
-        coins[fake_num].set_fake()
+        coins[fake_num].set_fake(fake_weight)
 
     deduced_fake = solve_all_coins(coins)
     print("\nThe fake coin must be Coin {}".format(deduced_fake.number))
